@@ -149,6 +149,10 @@ main section {
   align-items: center;
 }
 
+.hero-copy-only {
+  grid-template-columns: minmax(0, 760px);
+}
+
 .hero-copy {
   padding-right: 1rem;
 }
@@ -175,6 +179,31 @@ main section {
 .new-year-message span {
   color: var(--gold);
   padding: 0 0.3rem;
+}
+
+.hero-new-year-link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 1.35rem;
+  color: var(--teal-deep);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero-new-year-link strong {
+  color: var(--slate);
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.hero-new-year-link:hover strong,
+.hero-new-year-link:focus-visible strong {
+  color: var(--teal-deep);
 }
 
 .eyebrow {
@@ -294,9 +323,9 @@ h3 {
 }
 
 .new-year-feature-inner {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 330px);
+  align-items: center;
   gap: 2rem;
 }
 
@@ -315,6 +344,64 @@ h3 {
 .new-year-feature .lead {
   margin: 0;
   max-width: 60ch;
+}
+
+.archive-grid {
+  margin-top: 1rem;
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+}
+
+.archive-card p {
+  margin-bottom: 1.2rem;
+}
+
+.archive-card .inline-link {
+  margin-top: auto;
+  justify-content: flex-start;
+}
+
+.new-year-feature-link {
+  display: inline-flex;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+  color: var(--teal-deep);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.new-year-feature-link:hover,
+.new-year-feature-link:focus-visible {
+  color: var(--slate);
+}
+
+.new-year-feature-art {
+  display: block;
+  border: 1px solid rgba(67, 93, 96, 0.16);
+  background: rgba(255, 250, 240, 0.58);
+  padding: 0.55rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.new-year-feature-art:hover,
+.new-year-feature-art:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(38, 54, 59, 0.12);
+}
+
+.new-year-feature-art img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.new-year-feature-light {
+  min-height: 220px;
+  background: linear-gradient(145deg, rgba(201, 221, 225, 0.72), rgba(242, 211, 158, 0.7) 55%, rgba(234, 198, 170, 0.48));
 }
 
 section.alt { background: linear-gradient(105deg, var(--stone), rgba(234, 198, 170, 0.34)); }
@@ -532,12 +619,18 @@ textarea {
 }
 
 .article-heading {
+  padding: 3rem 2rem 3.5rem;
+  border-bottom: 1px solid rgba(67, 93, 96, 0.16);
   margin-bottom: 3.5rem;
   text-align: center;
+  background: linear-gradient(135deg, rgba(201, 221, 225, 0.72), rgba(255, 250, 240, 0.88), rgba(242, 211, 158, 0.42));
 }
 
 .article-heading h1 {
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-subtitle {
@@ -549,11 +642,20 @@ textarea {
 }
 
 .article-shell p {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.45rem;
+  line-height: 1.75;
+}
+
+.article-shell > p:first-of-type {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1.45;
 }
 
 .article-shell h2 {
-  margin: 4rem 0 1.4rem;
+  padding-top: 1.2rem;
+  margin: 4.5rem 0 1.6rem;
+  border-top: 1px solid rgba(67, 93, 96, 0.18);
 }
 
 .article-shell ol {
@@ -586,6 +688,14 @@ textarea {
   margin: 0 auto;
 }
 
+.article-graphic:first-of-type img {
+  max-height: 760px;
+}
+
+.article-graphic:last-of-type img {
+  max-height: 500px;
+}
+
 .article-rotating-art {
   margin: 3.5rem auto;
   padding: 0;
@@ -594,6 +704,42 @@ textarea {
 .article-rotating-art .concept-rotator {
   margin: 0 auto;
   max-width: min(100%, 500px);
+}
+
+.archive-page {
+  background: linear-gradient(180deg, var(--sky), var(--ivory) 35%, var(--stone));
+  padding: 5rem 0 7rem;
+}
+
+.archive-shell {
+  width: min(900px, calc(100% - 2rem));
+}
+
+.archive-heading {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.archive-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.archive-entry {
+  background: rgba(255, 250, 240, 0.84);
+  border: 1px solid var(--line);
+  padding: 1.6rem;
+}
+
+.archive-entry h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  margin-bottom: 0.6rem;
+}
+
+.archive-entry p {
+  max-width: 65ch;
+  margin: 0 0 1rem;
 }
 
 @media (max-width: 900px) {
@@ -609,7 +755,7 @@ textarea {
 
   .new-year-feature-inner {
     align-items: start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .principles-grid {
