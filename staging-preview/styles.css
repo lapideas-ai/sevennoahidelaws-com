@@ -286,6 +286,37 @@ h3 {
   background: linear-gradient(105deg, var(--stone), rgba(247, 229, 189, 0.68));
 }
 
+.new-year-feature {
+  padding: 3.5rem 0;
+  background: linear-gradient(105deg, var(--sky), var(--ivory) 55%, rgba(242, 211, 158, 0.6));
+  border-top: 1px solid rgba(67, 93, 96, 0.12);
+  border-bottom: 1px solid rgba(67, 93, 96, 0.12);
+}
+
+.new-year-feature-inner {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.new-year-feature h2 {
+  margin-bottom: 0.35rem;
+}
+
+.new-year-feature-title {
+  color: var(--slate);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem;
+}
+
+.new-year-feature .lead {
+  margin: 0;
+  max-width: 60ch;
+}
+
 section.alt { background: linear-gradient(105deg, var(--stone), rgba(234, 198, 170, 0.34)); }
 
 .section-head {
@@ -489,14 +520,96 @@ textarea {
 
 .status.show { display: block; }
 
+.article-page {
+  background: linear-gradient(180deg, var(--ivory), var(--stone));
+  padding: 5rem 0 7rem;
+}
+
+.article-shell {
+  width: min(760px, calc(100% - 2rem));
+  margin: 0 auto;
+  font-size: 1.12rem;
+}
+
+.article-heading {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+.article-heading h1 {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+}
+
+.article-subtitle {
+  color: var(--slate);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.article-shell p {
+  margin: 0 0 1.25rem;
+}
+
+.article-shell h2 {
+  margin: 4rem 0 1.4rem;
+}
+
+.article-shell ol {
+  padding-left: 1.5rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.article-shell li + li {
+  margin-top: 0.35rem;
+}
+
+.article-shell blockquote {
+  border-left: 3px solid var(--gold);
+  color: var(--slate);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.35rem;
+  margin: 2rem 0;
+  padding: 0.5rem 0 0.5rem 1.25rem;
+}
+
+.article-graphic {
+  margin: 2.5rem auto 3rem;
+  text-align: center;
+}
+
+.article-graphic img {
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.article-rotating-art {
+  margin: 3.5rem auto;
+  padding: 0;
+}
+
+.article-rotating-art .concept-rotator {
+  margin: 0 auto;
+  max-width: min(100%, 500px);
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .grid-2,
   .grid-3,
   .footer-grid,
   .bottom-links,
-  .field-row {
+  .field-row,
+  .new-year-feature-inner {
     grid-template-columns: 1fr;
+  }
+
+  .new-year-feature-inner {
+    align-items: start;
+    flex-direction: column;
   }
 
   .principles-grid {
