@@ -149,10 +149,6 @@ main section {
   align-items: center;
 }
 
-.hero-copy-only {
-  grid-template-columns: minmax(0, 760px);
-}
-
 .hero-copy {
   padding-right: 1rem;
 }
