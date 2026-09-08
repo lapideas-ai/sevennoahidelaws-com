@@ -88,6 +88,9 @@ header {
   font-weight: 600;
 }
 
+.social-link { display: inline-flex; align-items: center; gap: 0.55rem; }
+.social-link svg { width: 1rem; height: 1rem; fill: currentColor; }
+
 .primary-btn {
   background: var(--teal-deep);
   color: var(--ivory);
@@ -615,6 +618,7 @@ textarea {
 }
 
 .article-heading {
+  position: static;
   padding: 3rem 2rem 3.5rem;
   border-bottom: 1px solid rgba(67, 93, 96, 0.16);
   margin-bottom: 3.5rem;
@@ -697,10 +701,46 @@ textarea {
   padding: 0;
 }
 
+.article-light-composition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+  align-items: center;
+  gap: 2rem;
+  margin: 3.5rem 0;
+}
+
+.article-light-words p {
+  margin-bottom: 0.45rem;
+}
+
+.article-light-composition .article-rotating-art {
+  margin: 0;
+}
+
 .article-rotating-art .concept-rotator {
   margin: 0 auto;
   max-width: min(100%, 500px);
 }
+
+.legacy-page {
+  background: linear-gradient(180deg, var(--ivory), var(--stone));
+  padding: 5rem 0 7rem;
+}
+
+.legacy-shell {
+  width: min(760px, calc(100% - 2rem));
+  margin: 0 auto;
+  font-size: 1.08rem;
+}
+
+.legacy-heading {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.legacy-shell p { line-height: 1.75; margin: 0 0 1.35rem; }
+.legacy-shell h2 { border-top: 1px solid var(--line); margin: 3.5rem 0 1.3rem; padding-top: 1rem; }
+.legacy-shell li { margin-bottom: 0.5rem; }
 
 .archive-page {
   background: linear-gradient(180deg, var(--sky), var(--ivory) 35%, var(--stone));
@@ -760,6 +800,10 @@ textarea {
 
   .concept-rotator {
     width: 100%;
+  }
+
+  .article-light-composition {
+    grid-template-columns: 1fr;
   }
 
   .concept-artwork {
