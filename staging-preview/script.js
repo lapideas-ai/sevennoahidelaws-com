@@ -11,10 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'KINDNESS',
     'GRATITUDE'
   ];
-  const conceptWord = document.querySelector('.concept-word');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let conceptIndex = 0;
-
   const wordSizeClass = (word) => {
     if (word.length <= 5) return '';
     if (word.length <= 7) return 'word-medium';
@@ -22,21 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return 'word-longest';
   };
 
-  const showConcept = () => {
-    conceptWord.textContent = concepts[conceptIndex];
-    conceptWord.className = `concept-word ${wordSizeClass(concepts[conceptIndex])}`;
-  };
-
-  if (conceptWord && !reducedMotion) {
+  document.querySelectorAll('.concept-rotator').forEach((rotator) => {
+    const conceptWord = rotator.querySelector('.concept-word');
+    let conceptIndex = 0;
+    if (!conceptWord || reducedMotion) return;
     window.setInterval(() => {
       conceptWord.classList.add('is-fading');
       window.setTimeout(() => {
         conceptIndex = (conceptIndex + 1) % concepts.length;
-        showConcept();
-        conceptWord.classList.remove('is-fading');
+        conceptWord.textContent = concepts[conceptIndex];
+        conceptWord.className = `concept-word ${wordSizeClass(concepts[conceptIndex])}`;
       }, 600);
+      window.setTimeout(() => conceptWord.classList.remove('is-fading'), 700);
     }, 5200);
-  }
+  });
 
   const forms = document.querySelectorAll('form[data-preview-form]');
 
